@@ -78,17 +78,17 @@ function App() {
             fontStyle: difficulty > 1 ? "italic" : "inherit",
           }}
         >
-          hell
+          infini
         </span>
-        o wordl
+        Termo
       </h1>
       <div className="top-right">
         {page !== "game" ? (
           link("❌", "Close", "game")
         ) : (
           <>
-            {link("❓", "About", "about")}
-            {link("⚙️", "Settings", "settings")}
+            {link("❓", "Sobre", "about")}
+            {link("⚙️", "Configurações", "settings")}
           </>
         )}
       </div>
@@ -101,7 +101,7 @@ function App() {
         }}
       >
         <a href={seed ? "?random" : "?seed=" + todaySeed}>
-          {seed ? "Random" : "Today's"}
+          {seed ? "Seed: Aleatória" : "Seed: Hoje"}
         </a>
       </div>
       {page === "about" && <About />}
@@ -114,7 +114,7 @@ function App() {
               checked={dark}
               onChange={() => setDark((x: boolean) => !x)}
             />
-            <label htmlFor="dark-setting">Dark theme</label>
+            <label htmlFor="dark-setting">Modo Escuro</label>
           </div>
           <div className="Settings-setting">
             <input
@@ -123,7 +123,7 @@ function App() {
               checked={colorBlind}
               onChange={() => setColorBlind((x: boolean) => !x)}
             />
-            <label htmlFor="colorblind-setting">High-contrast colors</label>
+            <label htmlFor="colorblind-setting">Modo Daltónico</label>
           </div>
           <div className="Settings-setting">
             <input
@@ -136,7 +136,7 @@ function App() {
             />
             <div>
               <label htmlFor="difficulty-setting">Difficulty:</label>
-              <strong>{["Normal", "Hard", "Ultra Hard"][difficulty]}</strong>
+              <strong>{["Normal", "Difícil", "Mega Difícil"][difficulty]}</strong>
               <div
                 style={{
                   fontSize: 14,
@@ -147,16 +147,16 @@ function App() {
               >
                 {
                   [
-                    `Guesses must be valid dictionary words.`,
-                    `Wordle's "Hard Mode". Green letters must stay fixed, and yellow letters must be reused.`,
-                    `An even stricter Hard Mode. Yellow letters must move away from where they were clued, and gray clues must be obeyed.`,
+                    `Suas tentativas devem ser palavras válidas do dicionário`,
+                    `Modo Difícil: As letras verdes devem continuar fixas, enquanto as amarelas devem ser reutilizadas`,
+                    `Modo Extra Difícil: As letras amarelas devem se afastar de onde foram sinalizadas, e as sinalizações cinzas devem ser obedecidas.`,
                   ][difficulty]
                 }
               </div>
             </div>
           </div>
           <div className="Settings-setting">
-            <label htmlFor="keyboard-setting">Keyboard layout:</label>
+            <label htmlFor="keyboard-setting">Layout do teclado:</label>
             <select
               name="keyboard-setting"
               id="keyboard-setting"
@@ -176,7 +176,7 @@ function App() {
               checked={enterLeft}
               onChange={() => setEnterLeft((x: boolean) => !x)}
             />
-            <label htmlFor="enter-left-setting">"Enter" on left side</label>
+            <label htmlFor="enter-left-setting">Tecla "Enter" do lado esquerdo</label>
           </div>
         </div>
       )}
